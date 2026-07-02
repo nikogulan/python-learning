@@ -11,8 +11,20 @@ def main():
 
 
 def convert(time):
-    if time.endswith("pm"):
+    if time.endswith("pm") and time == "12:00 pm":
         time_pm = time.removesuffix("pm")
+        h, m = time_pm.split(":")
+        hours = int(h)
+        minutes = int(m)
+        return float((hours * 60 + minutes) / 60)
+    elif time.endswith("pm"):
+        time_pm = time.removesuffix("pm")
+        h, m = time_pm.split(":")
+        hours = int(h)
+        minutes = int(m)
+        return float(((hours + 12) * 60 + minutes) / 60)
+    elif time.endswith("am") and time == "12:00 am":
+        time_pm = time.removesuffix("am")
         h, m = time_pm.split(":")
         hours = int(h)
         minutes = int(m)

@@ -1,4 +1,4 @@
-# FIGlet
+# Frank, Ian and Glen’s Letters
 
 A Python command-line program that converts ordinary text into large ASCII art using the `pyfiglet` library.
 
